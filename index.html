@@ -112,4 +112,153 @@
           linear-gradient(rgba(40, 30, 20, 0.035) 1px, transparent 1px),
           linear-gradient(90deg, rgba(40, 30, 20, 0.035) 1px, transparent 1px);
         background-size: 52px 52px;
+      }.app {
+        min-height: 100vh;
+      }
+      .topline {
+        height: 34px;
+        border-bottom: 1px solid var(--line);
+        padding: 0 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--soft);
+        font: 700 9px "Space Mono";
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .shell {
+        width: min(1480px, 94vw);
+        margin: 0 auto;
+      }
+      .nav {
+        position: sticky;
+        top: 10px;
+        z-index: 80;
+        margin: 18px auto 28px;
+        background: rgba(255, 250, 243, 0.82);
+        border: 1px solid var(--line);
+        backdrop-filter: blur(18px);
+        border-radius: 22px;
+        padding: 9px 12px;
+        box-shadow: var(--shadow-sm);
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        min-width: max-content;
+        padding: 3px 6px;
+      }
+      .logo {
+        width: 42px;
+        height: 42px;
+        border-radius: 13px;
+        display: grid;
+        place-items: center;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        font-family: Fraunces;
+        font-weight: 800;
+        font-size: 24px;
+        color: var(--accent);
+        box-shadow: var(--shadow-sm);
+      }
+      .brand h1 {
+        font: 800 21px Fraunces;
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+      .brand span {
+        font: 9px "Space Mono";
+        color: var(--soft);
+        letter-spacing: 0.08em;
+      }
+      .navlinks {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        flex: 1;
+        overflow: auto;
+      }
+      .navlinks button,
+      .ghost,
+      .mini {
+        border: 0;
+        background: transparent;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 800;
+        padding: 9px 11px;
+        border-radius: 999px;
+        white-space: nowrap;
+      }
+      .navlinks button:hover,
+      .ghost:hover,
+      .mini:hover {
+        background: var(--paper2);
+        color: var(--ink);
+      }
+      .primary {
+        background: var(--accent) !important;
+        color: #fff !important;
+        border: 0 !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      }
+      .page {
+        padding-bottom: 90px;
+      }
+      .view {
+        display: none;
+        animation: fadeIn 0.35s ease;
+      }
+      .view.active {
+        display: block;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(7px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 36px;
+        align-items: center;
+        padding: 50px 0 70px;
+      }
+      .kicker {
+        font: 700 10px "Space Mono";
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+      }
+      .hero h2 {
+        font: 800 clamp(51px, 7.2vw, 91px)/0.94 Fraunces;
+        letter-spacing: -0.055em;
+        margin: 16px 0 23px;
+      }
+      .hero h2 em {
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .hero p {
+        color: var(--muted);
+        font-size: 18px;
+        max-width: 730px;
+      }
+      .actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin: 28px 0;
       }
