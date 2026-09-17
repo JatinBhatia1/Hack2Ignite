@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" data-theme="atelier">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>HORIZON — Student Career Intelligence</title>
+    <meta
+      name="description"
+      content="HORIZON: a polished, source-labelled career intelligence workspace for students."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5efe6;
+        --paper: #fffaf3;
+        --paper2: #eee4d7;
+        --paper3: #e4d8c9;
+        --ink: #1b1612;
+        --muted: #65584e;
+        --soft: #907f70;
+        --accent: #ab4725;
+        --accent2: #d7952d;
+        --green: #2e5b48;
+        --danger: #a64d3f;
+        --line: rgba(43, 31, 22, 0.13);
+        --shadow: 0 24px 70px rgba(53, 37, 24, 0.11);
+        --shadow-sm: 0 10px 28px rgba(53, 37, 24, 0.08);
+        --r: 26px;
+        --r2: 16px;
+      }
+      html[data-theme="spruce"] {
+        --bg: #e9f0e6;
+        --paper: #fcfdf9;
+        --paper2: #e0e9da;
+        --paper3: #d3e0cd;
+        --ink: #132219;
+        --muted: #526257;
+        --soft: #7d9082;
+        --accent: #286148;
+        --accent2: #879c32;
+        --green: #24563f;
+      }
+      html[data-theme="riviera"] {
+        --bg: #edf4f8;
+        --paper: #fcfeff;
+        --paper2: #e0ebf1;
+        --paper3: #d3e1e9;
+        --ink: #102137;
+        --muted: #50677f;
+        --soft: #7c90a6;
+        --accent: #2e5dd4;
+        --accent2: #f07345;
+        --green: #187a6f;
+      }
+      html[data-theme="fig"] {
+        --bg: #f3edf5;
+        --paper: #fefbff;
+        --paper2: #e9ddec;
+        --paper3: #ddcde1;
+        --ink: #211326;
+        --muted: #604f69;
+        --soft: #887594;
+        --accent: #7a3195;
+        --accent2: #eba320;
+        --green: #20715d;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.55;
+        min-height: 100vh;
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      ::selection {
+        background: var(--accent);
+        color: #fff;
+      }
+      body:before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: -1;
+        opacity: 0.65;
+        background-image:
+          linear-gradient(rgba(40, 30, 20, 0.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(40, 30, 20, 0.035) 1px, transparent 1px);
+        background-size: 52px 52px;
+      }
