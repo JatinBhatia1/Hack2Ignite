@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="atelier">
   <head>
     <meta charset="UTF-8" />
@@ -15,19 +15,32 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+
+    <script src="script.js?v=2.0" defer></script>
   </head>
   <body>
     <div id="root"></div>
 
-    <!-- W-COMBINATORS AI ASSISTANT OVERLAY -->
+    <!-- W-COMBINATORS AI ASSISTANT: additive overlay; existing HORIZON modules remain untouched. -->
     <div id="wcBot" aria-label="W-Combinators AI assistant">
       <section class="wc-panel" id="wcPanel" aria-label="W-Combinators chat">
         <div class="wc-head">
           <div class="wc-head-icon" aria-hidden="true">
             <svg width="23" height="23" viewBox="0 0 32 32" fill="none">
-              <path d="M6 8.5C6 6.57 7.57 5 9.5 5h13C24.43 5 26 6.57 26 8.5v9.2c0 1.93-1.57 3.5-3.5 3.5H14l-5.3 5v-5.3H9.5C7.57 20.9 6 19.33 6 17.4V8.5Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
-              <path d="M11 12.2c2-1.8 3.8-1.8 5.7 0 1.9-1.8 3.8-1.8 5.7 0" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
-              <circle cx="11.3" cy="15.5" r="1.2" fill="currentColor"/><circle cx="20.7" cy="15.5" r="1.2" fill="currentColor"/>
+              <path
+                d="M6 8.5C6 6.57 7.57 5 9.5 5h13C24.43 5 26 6.57 26 8.5v9.2c0 1.93-1.57 3.5-3.5 3.5H14l-5.3 5v-5.3H9.5C7.57 20.9 6 19.33 6 17.4V8.5Z"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M11 12.2c2-1.8 3.8-1.8 5.7 0 1.9-1.8 3.8-1.8 5.7 0"
+                stroke="currentColor"
+                stroke-width="2.1"
+                stroke-linecap="round"
+              />
+              <circle cx="11.3" cy="15.5" r="1.2" fill="currentColor" />
+              <circle cx="20.7" cy="15.5" r="1.2" fill="currentColor" />
             </svg>
           </div>
           <div class="wc-title">
@@ -35,8 +48,22 @@
             <span id="wcSubtitle">Web guide · study co-pilot</span>
           </div>
           <div class="wc-head-actions">
-            <button class="wc-iconbtn" title="Assistant settings" aria-label="Assistant settings" onclick="wcToggleSettings()">⚙</button>
-            <button class="wc-iconbtn" title="Close" aria-label="Close assistant" onclick="wcToggle()">×</button>
+            <button
+              class="wc-iconbtn"
+              title="Assistant settings"
+              aria-label="Assistant settings"
+              onclick="wcToggleSettings()"
+            >
+              ⚙
+            </button>
+            <button
+              class="wc-iconbtn"
+              title="Close"
+              aria-label="Close assistant"
+              onclick="wcToggle()"
+            >
+              ×
+            </button>
           </div>
         </div>
         <div class="wc-statusbar">
@@ -47,50 +74,138 @@
         <div class="wc-messages" id="wcMessages"></div>
         <div class="wc-composer">
           <div class="wc-modebar">
-            <span class="wc-mode-note" id="wcModeNote">Ask about this web, careers, study topics or anything educational.</span>
+            <span class="wc-mode-note" id="wcModeNote"
+              >Ask about this web, careers, study topics or anything
+              educational.</span
+            >
             <button class="wc-clear" onclick="wcClearChat()">CLEAR CHAT</button>
           </div>
           <div class="wc-compose-row">
-            <textarea id="wcInput" class="wc-input" rows="1" placeholder="Type your problem…"></textarea>
-            <button id="wcMic" class="wc-mic" aria-label="Use microphone" title="Speak your question" onclick="wcToggleMic()">🎙</button>
-            <button class="wc-send" aria-label="Send" title="Send" onclick="wcSend()">➤</button>
+            <textarea
+              id="wcInput"
+              class="wc-input"
+              rows="1"
+              placeholder="Type your problem…"
+            ></textarea>
+            <button
+              id="wcMic"
+              class="wc-mic"
+              aria-label="Use microphone"
+              title="Speak your question"
+              onclick="wcToggleMic()"
+            >
+              🎙
+            </button>
+            <button
+              class="wc-send"
+              aria-label="Send"
+              title="Send"
+              onclick="wcSend()"
+            >
+              ➤
+            </button>
           </div>
           <div class="wc-bottomline">
-            <span class="wc-hint" id="wcHint">Enter to send · Shift+Enter for new line</span>
+            <span class="wc-hint" id="wcHint"
+              >Enter to send · Shift+Enter for new line</span
+            >
             <span class="wc-hint" id="wcKeyState"></span>
           </div>
         </div>
         <div class="wc-settings" id="wcSettings">
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
-            <div><span class="kicker">W-COMBINATORS / SETUP</span><div class="wc-setting-title">Power the tutor.</div></div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              gap: 8px;
+            "
+          >
+            <div>
+              <span class="kicker">W-COMBINATORS / SETUP</span>
+              <div class="wc-setting-title">Power the tutor.</div>
+            </div>
             <button class="wc-iconbtn" onclick="wcToggleSettings()">×</button>
           </div>
-          <p class="wc-setting-copy">Connect your own Google Gemini API key for live AI answers and Google Search grounding. Without a key, W-Combinators still handles HORIZON navigation, page knowledge and built-in educational guidance.</p>
+          <p class="wc-setting-copy">
+            Connect your own Google Gemini API key for live AI answers and
+            Google Search grounding. Without a key, W-Combinators still handles
+            HORIZON navigation, page knowledge and built-in educational
+            guidance.
+          </p>
           <label class="wc-label" for="wcApiKey">Google Gemini API key</label>
-          <input id="wcApiKey" class="wc-api" type="password" autocomplete="off" placeholder="Paste your API key here">
+          <input
+            id="wcApiKey"
+            class="wc-api"
+            type="password"
+            autocomplete="off"
+            placeholder="Paste your API key here"
+          />
           <div class="wc-settings-grid">
-            <button class="btn primary" onclick="wcSaveApiKey()">Save key</button>
+            <button class="btn primary" onclick="wcSaveApiKey()">
+              Save key
+            </button>
             <button class="btn" onclick="wcRemoveApiKey()">Forget key</button>
             <button class="btn" onclick="wcTestApi()">Test connection</button>
-            <button class="btn" onclick="wcToggleSettings()">Back to chat</button>
+            <button class="btn" onclick="wcToggleSettings()">
+              Back to chat
+            </button>
           </div>
-          <div class="wc-privacy"><b>Security note:</b> Keep Gemini API keys server-side for production. This single-page build allows supplying a key at runtime.</div>
-          <div class="wc-action-card"><b>Model:</b> Gemini 3.8 Flash · web-grounded when key is active.</div>
-          <div class="wc-action-card"><b>Voice:</b> browser speech recognition + speech synthesis.</div>
+          <div class="wc-privacy">
+            <b>Security note:</b> Google recommends keeping Gemini API keys
+            server-side for production apps. This single-file browser version
+            intentionally lets the site owner/user supply a key at runtime
+            rather than hard-coding one into the page.
+          </div>
+          <div class="wc-action-card">
+            <b>Model:</b> Gemini 3.8 Flash · web-grounded when the key is
+            available.
+          </div>
+          <div class="wc-action-card">
+            <b>Voice:</b> browser speech recognition for input + speech
+            synthesis for read-aloud.
+          </div>
+          <div class="wc-action-card">
+            <b>Commands:</b> “open roadmap”, “go to projects”, “add task …”,
+            “set target …”, “search Google for …”.
+          </div>
         </div>
       </section>
-      <button class="wc-launch" aria-label="Open W-Combinators" title="W-Combinators — AI study & web assistant" onclick="wcToggle()">
+      <button
+        class="wc-launch"
+        aria-label="Open W-Combinators"
+        title="W-Combinators — AI study & web assistant"
+        onclick="wcToggle()"
+      >
         <span class="wc-logo" aria-hidden="true">
           <svg viewBox="0 0 40 40" fill="none">
             <defs>
               <linearGradient id="wcGrad" x1="3" y1="3" x2="37" y2="37">
-                <stop stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent2)"/>
+                <stop stop-color="var(--accent)" />
+                <stop offset="1" stop-color="var(--accent2)" />
               </linearGradient>
             </defs>
-            <circle cx="20" cy="20" r="14.5" stroke="url(#wcGrad)" stroke-width="2.2"/>
-            <path d="M8.5 14.2l4.2 12.5 3.3-8.8 4 8.8 4.2-12.5" stroke="var(--ink)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M27.5 8.5v5M25 11h5" stroke="var(--accent2)" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="31" cy="27.5" r="2.4" fill="var(--accent)"/>
+            <circle
+              cx="20"
+              cy="20"
+              r="14.5"
+              stroke="url(#wcGrad)"
+              stroke-width="2.2"
+            />
+            <path
+              d="M8.5 14.2l4.2 12.5 3.3-8.8 4 8.8 4.2-12.5"
+              stroke="var(--ink)"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M27.5 8.5v5M25 11h5"
+              stroke="var(--accent2)"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <circle cx="31" cy="27.5" r="2.4" fill="var(--accent)" />
           </svg>
         </span>
       </button>
@@ -110,7 +225,5 @@
         <div class="commandlist" id="cmdList"></div>
       </div>
     </div>
-
-    <script src="script.js"></script>
   </body>
 </html>
