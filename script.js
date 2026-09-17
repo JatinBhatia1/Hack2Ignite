@@ -106,4 +106,52 @@ const careers = [
     demands: ["User research", "Prototyping", "Visual systems", "Interaction design", "Communication"],
     tracks: ["UX", "UI", "Product design", "Design systems", "Research"],
   },
+];const courseResources = [
+  { title:"Google Career Certificates", provider:"Google", tags:["data","analytics","sql","ux","design","cybersecurity","python","it","project management"], desc:"Career certificates covering Data Analytics, Advanced Data Analytics, Cybersecurity, UX Design, IT Support, IT Automation and more.", url:SOURCES.googleCertificates, alt:"Google Skills", altUrl:SOURCES.googleSkills },
+  { title:"Google Skills / Cloud", provider:"Google", tags:["cloud","ai","ml","machine learning","security","networking","python"], desc:"Official Google Cloud learning paths, courses, badges and hands-on labs.", url:SOURCES.googleSkills, alt:"Google Developers", altUrl:SOURCES.googleDevelopers },
+  { title:"Microsoft Learn", provider:"Microsoft", tags:["python","data","analytics","ai","ml","cybersecurity","security","azure","github","developer","cloud"], desc:"Self-directed learning paths and modules across developer, data, AI, cloud and security skills.", url:SOURCES.microsoftLearn, alt:"Microsoft AI", altUrl:SOURCES.microsoftAI },
+  { title:"Kaggle Learn", provider:"Kaggle", tags:["python","data","pandas","sql","machine learning","ml","visualization","ai","statistics"], desc:"Short, practical courses including Python, Pandas, SQL, machine learning, data visualization and deep learning.", url:SOURCES.kaggleLearn, alt:"Kaggle Python", altUrl:SOURCES.kagglePython },
+  { title:"GitHub Skills", provider:"GitHub", tags:["git","github","developer","programming","open source","devops"], desc:"Interactive GitHub courses covering Git, Markdown, pull requests, GitHub Pages and collaboration workflows.", url:SOURCES.githubSkills, alt:"GitHub", altUrl:"https://github.com/" },
+  { title:"Cisco Networking Academy", provider:"Cisco", tags:["networking","cybersecurity","security","linux","it","python","programming"], desc:"Free online learning across networking, cybersecurity, AI & data science, programming and IT.", url:SOURCES.ciscoNetAcad, alt:"Cisco", altUrl:"https://www.cisco.com/" },
+  { title:"AWS Skill Builder", provider:"AWS", tags:["aws","cloud","devops","security","machine learning","ml","python","data"], desc:"Official AWS training and learning paths for cloud, AI/ML, data, security and developer skills.", url:SOURCES.awsSkillBuilder, alt:"AWS Developers", altUrl:SOURCES.awsDevelopers },
+  { title:"YouTube — Google for Developers", provider:"YouTube / Google", tags:["javascript","python","web","android","firebase","cloud","ai","ml","developer"], desc:"Official developer tutorials, technical talks and product learning from Google for Developers.", url:SOURCES.googleDevelopers, alt:"Google Developers", altUrl:"https://developers.google.com/" },
+  { title:"YouTube — freeCodeCamp", provider:"freeCodeCamp", tags:["python","javascript","web","sql","machine learning","data","programming","git"], desc:"Long-form programming and technical learning videos from the freeCodeCamp community.", url:SOURCES.freeCodeCamp, alt:"freeCodeCamp", altUrl:"https://www.freecodecamp.org/" },
+];
+
+const internshipResources = [
+  { title:"Google Internships", provider:"Google Careers", tags:["python","software","ai","ml","data","design","business","engineering"], desc:"Official Google internship hub; listings change by team, location and academic program.", url:SOURCES.googleInternships },
+  { title:"Microsoft Early in Profession", provider:"Microsoft Careers", tags:["software","python","ai","data","security","cloud","developer","design"], desc:"Official student and early-career portal with global university internships and other programs.", url:SOURCES.microsoftStudents },
+  { title:"Amazon Student Internships", provider:"Amazon Jobs", tags:["software","aws","cloud","data","ai","business","engineering"], desc:"Official student internship listings and program information from Amazon Jobs.", url:SOURCES.amazonInternships },
+  { title:"IBM Internships", provider:"IBM Careers", tags:["software","ai","data","cloud","cybersecurity","research","business"], desc:"Official IBM internship portal, including roles and guidance for student candidates.", url:SOURCES.ibmInternships },
+  { title:"NVIDIA University Recruiting", provider:"NVIDIA Careers", tags:["ai","ml","python","cuda","hardware","software","data","research"], desc:"Official NVIDIA early-talent page covering internships and other university programs.", url:SOURCES.nvidiaUniversity },
+  { title:"Adobe University", provider:"Adobe Careers", tags:["design","ux","ui","software","creative","marketing","engineering"], desc:"Official Adobe university recruiting hub for intern and university-grad roles.", url:SOURCES.adobeUniversity },
+  { title:"Salesforce Futureforce", provider:"Salesforce Careers", tags:["software","ai","data","cloud","product","design","sales"], desc:"Official university internship programs across tech, product, sales, AI research and corporate functions.", url:SOURCES.salesforceInternships },
+  { title:"Unstop Internship Portal", provider:"Unstop", tags:["internship","software","data","marketing","design","finance","management","student"], desc:"India-focused internship marketplace with live listings.", url:SOURCES.unstopInternships },
+];
+
+const hackathonResources = [
+  { title:"Unstop Hackathons", provider:"Unstop", tags:["hackathon","coding","data","ai","design","business","student","india"], desc:"Live India-focused hackathon directory with eligibility, deadlines and registration details.", url:SOURCES.unstopHackathons, status:"LIVE DIRECTORY" },
+  { title:"Devpost Open Hackathons", provider:"Devpost", tags:["ai","ml","software","web","data","global","hackathon"], desc:"Open hackathon directory with online and in-person events.", url:SOURCES.devpost, status:"OPEN EVENTS" },
+  { title:"MLH Hackathon Season", provider:"Major League Hacking", tags:["coding","software","open source","student","hackathon","global"], desc:"Official student hackathon league and event calendar.", url:SOURCES.mlhEvents, status:"2026 CALENDAR" },
+];
+
+const companyResources = [
+  { title:"Google", provider:"Google Careers", tags:["software","python","ai","ml","data","security","design","cloud"], desc:"Official jobs and internship portals. Search by skill, role and location.", url:SOURCES.googleJobs },
+  { title:"Microsoft", provider:"Microsoft Careers", tags:["software","python","ai","data","security","cloud","developer"], desc:"Early-in-profession portal plus global student internship programs.", url:SOURCES.microsoftStudents },
+  { title:"Amazon / AWS", provider:"Amazon Jobs", tags:["software","aws","cloud","data","ai","business"], desc:"Student internships, new-grad programs and AWS-oriented early-career roles.", url:SOURCES.amazonInternships },
+];
+
+const features = [
+  ["01", "Profile Intelligence", "A structured student profile that becomes the input to every other module.", "profile"],
+  ["02", "Skill Calibration", "Adjust evidence-based self-ratings across technical, creative, analytical and communication dimensions.", "skills"],
+  ["03", "Career Match Engine", "Calculate transparent profile-fit signals against a small, source-backed occupation set.", "careers"],
+  ["04", "Career Explorer", "Search careers by title or required skills and inspect their source cards.", "careers"],
+  ["05", "Skill-Gap Audit", "See where your current skills intersect or miss the skills used by a target path.", "gaps"],
+  ["06", "Roadmap Generator", "Turn a target path into a four-stage action plan.", "roadmap"],
+  ["07", "Weekly Planner", "Create and complete weekly actions with local persistence.", "planner"],
+  ["08", "Project Studio", "Create portfolio evidence tied to skills and target paths.", "projects"],
+  ["09", "Application Tracker", "Track opportunities, stages and next actions in one pipeline.", "applications"],
+  ["10", "Market Radar", "Explore current source-labelled occupation growth and pay benchmarks.", "market"],
+  ["11", "Source Panel", "See exactly which public source a market fact came from.", "sources"],
+  ["12", "Theme Studio", "Switch among four light editorial visual themes.", "theme"],
 ];
